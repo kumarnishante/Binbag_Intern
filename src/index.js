@@ -5,6 +5,8 @@ const { StatusCodes } = require('http-status-codes');
 const dotenv = require('dotenv');
 const logger = require('./utils/logger');
 const errorHandler = require('./middleware/errorHandler');
+const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileRoutes');
 
 dotenv.config();
 
@@ -14,15 +16,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
-
+// Routes
+app.use('/api/auth', authRoutes);
+app.use('/api/profile', profileRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(StatusCodes.OK).json({ status: 'OK' });
 });
 
-
+// Error handling
+app.use(errorHandler);
 
 // Handle unknown routes (404)
 app.use((req, res, next) => {
