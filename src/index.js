@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const { StatusCodes } = require('http-status-codes');
 const dotenv = require('dotenv');
 const logger = require('./utils/logger');
+const errorHandler = require('./middleware/errorHandler');
 
 dotenv.config();
 
