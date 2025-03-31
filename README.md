@@ -43,6 +43,11 @@ Production mode:
 npm start
 ```
 
+## API Documentation
+
+For detailed API documentation and testing, visit the Postman documentation:
+[User Profile Management API - Postman](https://documenter.getpostman.com/view/42804519/2sB2cRCPSQ)
+
 ## API Endpoints
 
 ### Authentication
